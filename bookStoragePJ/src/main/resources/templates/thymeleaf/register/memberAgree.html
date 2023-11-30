@@ -4,6 +4,7 @@
 
 <th:block layout:fragment="contentCss">
 	<link href="/static/css/register/memberAgree.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" />
 </th:block>
 
 <th:block layout:fragment="contentScript">
@@ -26,19 +27,25 @@
 				<div class="sectionMid">
 					<div class="subject">
 						<h2>회원가입</h2>
-						<div class="subjectRoot"></div>
+						<div class="subjectRoot">
+							<ul>
+								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
+								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
+								<li>&nbsp;>&nbsp;&nbsp;회원가입</li>
+							</ul>
+						</div>
 						<div class="subjectButton">
 							<ul>
-								<li>①</li>
-								<li>②</li>
+								<li><a href="#"><i class="fal fa-share-alt"></i></i></i></a></li>
+								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="stepNavigation">
 						<ol>
-							<li>약관 동의</li>
-							<li>정보 입력</li>
-							<li>가입 완료</li>
+							<li><span class="stepNaviIndex">1</span><span class="stetNaviText">약관 동의</span></li>
+							<li><span class="stepNaviIndex">2</span><span class="stetNaviText">정보 입력</span></li>
+							<li><span class="stepNaviIndex">3</span><span class="stetNaviText">가입 완료</span></li>
 						</ol>
 					</div>
 					<div class="container">
