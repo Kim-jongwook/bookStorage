@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>BookStorage</title>
+	<th:block th:replace="/thymeleaf/common/fragments/config :: configFragment"></th:block>
+	<th:block layout:fragment="contentCss"></th:block>
+	<th:block layout:fragment="contentScript"></th:block>
+</head>
+<body>
+	<th:block th:replace="/thymeleaf/common/fragments/header :: headerFragment"></th:block>
+	<th:block layout:fragment="content"></th:block>
+	<th:block th:replace="/thymeleaf/common/fragments/footer :: footerFragment"></th:block>
+</body>
+</html>

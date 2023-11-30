@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="static/css/reset/reset.css" rel="stylesheet">
+	<link href="static/css/header.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function(){
+			var gnb = $("#gnb").offset().top;
+			$(window).scroll(function(){
+				var window = $(this).scrollTop();
+				if(gnb <= window){
+					$("#gnb").addClass("fixed");
+				}else{
+					$("#gnb").removeClass("fixed");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<th:block th:fragment="headerFragment">
+	<header id="header">
+		<div class="header_top">
+			<p>
+				<a href="/">
+					<img src="/static/img/logo.png" alt="로고">
+				</a>
+			</p>
+			<div class="siteMenu">
+				<ul>
+					<li><a href="">로그인</a></li>
+					<li> | </li>
+					<li><a href="">회원가입</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header_bottom">
+			<div id="gnb">
+				<ul>
+					<li><a href="#">메뉴1</a></li><!--
+				 --><li><a href="#">메뉴2</a></li><!--
+				 --><li><a href="#">메뉴3</a></li><!--
+				 --><li><a href="#">메뉴4</a></li>
+				 </ul>
+			</div>
+		</div>
+	</header>
+</th:block>
+</body>
+</html>

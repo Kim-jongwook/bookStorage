@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<th:block th:fragment="footerFragment">
+	<footer id="footer">
+		<div class="footer_top">
+			<div class="top_wrap">
+				<ul class="service">
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">청소년보호정책</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">회사소개</a></li>
+				</ul>
+				<ul class="sns">
+					<li><a href="#"><img src="/static/img/ic_instagram.png"></a></li>
+					<li><a href="#"><img src="/static/img/ic_blog.png"></a></li>
+					<li><a href="#"><img src="/static/img/ic_facebook.png"></a></li>
+					<li><a href="#"><img src="/static/img/ic_youtube.png"></a></li>
+					<li><a href="#"><img src="/static/img/ic_kakao.png"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer_bottom">
+			<p class="footer_logo">
+				<img src="/static/img/logo.png" alt="로고">
+			</p>
+			<div class="contact_list">
+				<p class="contact_itme_address">
+					우편번호 12345 서울시 강남구 강남대로 1(역삼동)
+					문의전화 02-123-4567 팩스 02-123-4567
+				</p>
+				<p class="contact_item_copyright">
+					Copyright ⓒ 2023 북스토리지 All Rights Reserved.
+				</p>
+			</div>
+		</div>
+	</footer>
+</th:block>
+</body>
+</html>

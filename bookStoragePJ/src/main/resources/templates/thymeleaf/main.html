@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="thymeleaf/common/layouts/default_layout">
+	
+<th:block layout:fragment="contentCss">
+	<link href="/static/css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</th:block>
+
+<th:block layout:fragment="contentScript">
+	<script src="https://kit.fontawesome.com/19818c12f7.js" crossorigin="anonymous"></script>
+	<script src="static/js/dropdownSearch.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script>
+		window.onload = function () {
+			var swiper = new Swiper(".mySwiper", {
+				spaceBetween: 30,
+				centeredSlides: true,
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			});
+		};
+	</script>
+</th:block>
+
+<th:block layout:fragment="content">
+	<section id="section">
+		<div class="sectionTop">
+			<div class="sectionGroup">
+				<div class="searchBox">
+					<div class="dropdown">
+						<span class="defaultOption">통합검색</span>
+						<ul>
+							<li>통합검색</li>
+							<li>제목</li>
+							<li>저자</li>
+							<li>출판사</li>
+						</ul>
+					</div>
+					<div class="searchField">
+						<input type="text" class="input" name="searchBox" placeholder="검색어를 입력하세요.">
+						<i class="fa-solid fa-magnifying-glass" style="color: #4073cc;"></i>
+					</div>
+				</div>
+				<div class="sectionTopFlex">
+					<div class="swipeBox">
+						<div class="swiper mySwiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="static/img/swipe_1.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="static/img/swipe_2.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="static/img/swipe_3.jpg">
+								</div>
+								<div class="swiper-slide">
+									<img src="static/img/swipe_4.jpg">
+								</div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+					<div class="loginBox">
+						<div class="div">
+							<form class="loginForm">
+								<table>
+									<caption>회원 로그인</caption>
+									<tr><th colspan="3"><input type="checkbox" name="">로그인 유지 <input type="checkbox" name="">아이디 저장</tr>
+									<tr><th colspan="3"><input type="text" name="" placeholder="아이디"></td></tr>
+									<tr><th colspan="3"><input type="password" name="" placeholder="비밀번호"></th></tr>
+									<tr><th colspan="3"><input type="submit" name="" value="로그인"></th></tr>
+									<tr><th colspan="3"><div class="form4"><a href="#">아이디 찾기</a><a href="#">비밀번호 찾기</a><a href="register/userAgree">회원가입</a></div></td></tr>
+								</table>
+							</form>
+							<ul>
+								<li>소메뉴1</li>
+								<li>소메뉴2</li>
+								<li>소메뉴3</li>
+								<li>소메뉴4</li>
+								<li>소메뉴5</li>
+								<li>소메뉴6</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sectionMid">
+			<div class="sectionGroup">
+				<div class="dummyBox">
+					
+				</div>
+			</div>
+		</div>
+    </section>
+</th:block>
+
+</html>
