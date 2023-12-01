@@ -32,14 +32,24 @@
 	height: 50px;
 }
 
+#section .sectionTop .wrap .snbBox .snb li:nth-child(4){
+	background: url(/static/img/lnb_arr.png) no-repeat right center;
+}
+
 #section .sectionTop .wrap .snbBox .snb li a{
-	color: #555;
+	font-size: 18px;
+	color: #555555;
 	text-decoration: none;
 	line-height: 50px;
 	padding-left: 20px;
 }
 
+#section .sectionTop .wrap .snbBox .snb li:nth-child(4) a{
+	color: #005EB2;
+}
+
 #section .sectionTop .wrap .sectionMid{
+	width: 100%;
 	padding: 79px 0 0 50px;
 }
 
@@ -95,55 +105,144 @@
 	line-height: 38px;
 	font-size: 23px;
 }
+/* 여기까지 */
 
 #section .sectionTop .wrap .sectionMid .stepNavigation{
-	padding-top: 75px;
+	padding-top: 74px;
+}
+
+#section .sectionTop .wrap .sectionMid .stepNavigation ol{
+	display: flex;
+	justify-content: space-between;
 }
 
 #section .sectionTop .wrap .sectionMid .stepNavigation ol li{
-	display: inline-block;
-	width: 30%;
-	height: 55px;
+	width: 24%;
+	height: 65px;
+	line-height: 61px;
 	box-sizing: border-box;
 	border: 1px solid #cdcdcd;
 }
 
 #section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(1){
-	border: 1px solid #5692bc;
+	border: 2px solid #5692bc;
 }
 
 #section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(1) .stepNaviIndex{
 	color: #5692bc;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(2){
-	margin: 0 4% 0 4%;
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(1) .stepNaviText{
+	color: #333333;
 }
 
 #section .sectionTop .wrap .sectionMid .stepNavigation ol li .stepNaviIndex{
 	display: inline-block;
-	color: #242424;
-	font-size: 23px;
+	color: #777777;
+	font-size: 22px;
 	width: 30%;
+	height: 100%;
 	box-sizing: border-box;
 	border-right: 1px solid #cdcdcd;
 	text-align: center;
-	line-height: 55px;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li .stetNaviText{
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li .stepNaviText{
 	display: inline-block;
-	font-size: 23px;
-	color: #242424;
+	font-size: 22px;
+	color: #777777;
 	width: 70%;
+	height: 100%;
 	text-align: center;
-	line-height: 55px;
 }
 
+#section .sectionTop .wrap .sectionMid .container form{
+	margin-top: 30px;
+	color: #777777;
+}
 
+#section .sectionTop .wrap .sectionMid .container form h3{
+	color: #333333;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 30px;
+}
 
+#section .sectionTop .wrap .sectionMid .container form .allAgree h3{
+	margin: 0;
+}
 
+#section .sectionTop .wrap .sectionMid input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	margin: 0 8px 0 0;
+	vertical-align: bottom;
+}
 
+#section .sectionTop .wrap .sectionMid .container form .terms{
+	width: 100%;
+	height: 300px;
+	border: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	margin: 15px 0px 15px 0;
+	overflow: auto;	
+}
+
+#section .sectionTop .wrap .sectionMid .container form .terms{
+	padding: 10px 15px;	
+}
+
+#section .sectionTop .wrap .sectionMid .container form .terms .termsSubject{
+	color: #333333;
+	font-size: 18px;
+}
+
+#section .sectionTop .wrap .sectionMid .container form .terms p{
+	color: #626262;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+#section .sectionTop .wrap .sectionMid .container form hr{
+	width: 95%;
+	height: 1px;
+	margin-top: 15px;
+	border: none;
+	background-color: #e8e8e8;
+	
+}
+
+#section .sectionTop .wrap .sectionMid .container form .btnWrap{
+	margin: 40px 0;
+	text-align: center;
+}
+
+#section .sectionTop .wrap .sectionMid .container form input[type="submit"]{
+	width: 175px;
+	height: 38px;
+	line-height: 38px;
+	color: #fff;
+	background-color: #5692bc;
+	cursor: pointer;
+	border: none;
+	font-size: 16px;
+	margin-left: 22px;
+}
+
+#section .sectionTop .wrap .sectionMid .container form button{
+	width: 175px;
+	height: 38px;
+	line-height: 38px;
+	color: #fff;
+	background-color: #6c6c6c;
+	cursor: pointer;
+	border: none;
+	font-size: 16px;
+}
+.txt{
+	color: #666666;
+}
 
 
 

@@ -8,7 +8,30 @@
 </th:block>
 
 <th:block layout:fragment="contentScript">
-
+<script>
+	$(function(){
+		$("#agree0").click(function(){
+			if($(this).prop("checked")){
+				$(".agree1").prop("checked", true);
+			}else{
+				$(".agree1").prop("checked", false);
+			}
+		});
+		$(".agree1").click(function(){
+			if($(".agree1:checked").length === $(".agree1").length){
+				$("#agree0").prop("checked", true);
+			}else{
+				$("#agree0").prop("checked", false);
+			}
+		});
+		$("#frm").submit(function(){
+			if(!$("#agree0").prop("checked")){
+				alert("전체동의 후 가입이 가능합니다.");
+				return false;
+			}else{}
+		});
+	});
+</script>
 </th:block>
 
 <th:block layout:fragment="content">
@@ -21,7 +44,7 @@
 						<li><a href="#">로그인</a></li>
 						<li><a href="#">아이디 찾기</a></li>
 						<li><a href="#">비밀번호 찾기</a></li>
-						<li><a href="#">회원가입</a></li>
+						<li><a href="/register/userAgree">회원가입</a></li>
 					</ul>
 				</div>
 				<div class="sectionMid">
@@ -43,31 +66,91 @@
 					</div>
 					<div class="stepNavigation">
 						<ol>
-							<li><span class="stepNaviIndex">1</span><span class="stetNaviText">약관 동의</span></li>
-							<li><span class="stepNaviIndex">2</span><span class="stetNaviText">정보 입력</span></li>
-							<li><span class="stepNaviIndex">3</span><span class="stetNaviText">가입 완료</span></li>
+							<li><span class="stepNaviIndex">1</span><span class="stepNaviText">약관 동의</span></li>
+							<li><span class="stepNaviIndex">2</span><span class="stepNaviText">정보 입력</span></li>
+							<li><span class="stepNaviIndex">3</span><span class="stepNaviText">이메일 인증</span></li>
+							<li><span class="stepNaviIndex">4</span><span class="stepNaviText">가입 완료</span></li>
 						</ol>
 					</div>
+					<p class="txt mt15">반드시 약관 내용을 읽어 보신 후 동의하시기 바랍니다. <span style="color:#5792bc;">이용약관 및 개인정보 수집 및 이용</span>에 동의해주셔야 가입이 가능합니다.</p>
 					<div class="container">
-						<input type="checkbox" id="allAgree">전체동의
-						<hr>
-						<input type"checkbox" id="firstAgree">이용약관<span class="required">(필수)</span>
-						<div class="terms">
-							<h4>제1장 총칭</h4><br>
-							<h5>제1조 (목적)</h5>
-							<p>이 약관은 주식회사 북스토리지(이하 “회사”라 함)가 운영하는 “북스토리지” 인터넷 사이트 (www.bookstorage.co.kr, 이하 “북스토리지”이라
-								함)와
-								스마트폰 등 이동통신기기를 통해 제공되는 ‘북스토리지’ 모바일 애플리케이션(이하 “모바일북스토리지”이라고 합니다)을 통해서 제공하는 전자상거래 관련 서비스
-								및 기타 서비스 (이하 “서비스”라 함)를 이용하는 자간의 권리, 의무를 확정하고 이를 이행함으로써 상호 발전을 도모하는 것을 그 목적으로 합니다.</p>
-							<h5>제2조 (약관의 명시, 효력과 개정)</h5>
-							<p>1. 회사는 이 약관의 내용을 회사의 상호, 영업소 소재지, 대표자의 성명, 사업자등록번호, 연락처(전화, 팩스, 전자우편주소 등)등과 함께 회원이 확인할
-								수 있도록 “북스토리지” 초기 서비스화면 또는 연결화면에 게시합니다.
-								2. 회사는 약관의규제에관한법률, 전자문서 및 전자거래기본법, 전자서명법, 정보통신망이용촉진및정보보호등에관한법률, 전자상거래등에서의소비자보호에관한법률,
-								전자금융거래법 등 관련법을 위배하지 않는 범위에서 본 약관을 개정할 수 있습니다.
-								3. 회사가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행 약관과 함께 초기화면에 그 적용일자 14일 이전부터 적용일자 전일까지 공지합니다.
-								다만, 변경 내용이 중대하거나 구매회원에게 불리한 경우에는 그 적용일자 30일 이전부터 적용일자 전일까지 공지하고 구매회원에게 개별 통지합니다.변경된 약관은
-								그 적용일자 이전으로 소급하여 적용되지 아니합니다</p>
-						</div>
+						<form action="userWrite" method="post" name="frm" id="frm">
+							<div class="allAgree">
+								<input type="checkbox" id="agree0">
+								<h3>전체동의</h3>
+							</div>
+							<hr>
+							<input type="checkbox" class="agree1">
+							<h3>이용약관</h3><span class="required">(필수)</span>
+							<div class="terms">
+								<div class="termsWrap">
+									<p class="termsSubject">제 1 장 총 칭</p>
+									<br>
+									<p>제 1 조 (목적)</p>
+									<br>
+									<p>이 약관은 주식회사 북스토리지(이하 “회사”라 함)가 운영하는 “북스토리지” 인터넷 사이트 (www.bookstorage.co.kr, 이하 “북스토리지”이라
+										함)와
+										스마트폰 등 이동통신기기를 통해 제공되는 ‘북스토리지’ 모바일 애플리케이션(이하 “모바일북스토리지”이라고 합니다)을 통해서 제공하는 전자상거래 관련 서비스
+										및 기타 서비스 (이하 “서비스”라 함)를 이용하는 자간의 권리, 의무를 확정하고 이를 이행함으로써 상호 발전을 도모하는 것을 그 목적으로 합니다.
+									</p>
+									<br>
+									<p>제 2 조 (약관의 명시, 효력과 개정)</p>
+									<br>
+									<p>1. 회사는 이 약관의 내용을 회사의 상호, 영업소 소재지, 대표자의 성명, 사업자등록번호, 연락처(전화, 팩스, 전자우편주소 등)등과 함께 회원이 확인할
+										수 있도록 “북스토리지” 초기 서비스화면 또는 연결화면에 게시합니다.
+									</p>
+									<br>
+									<p>2. 회사는 약관의규제에관한법률, 전자문서 및 전자거래기본법, 전자서명법, 정보통신망이용촉진및정보보호등에관한법률, 전자상거래등에서의소비자보호에관한법률,
+										전자금융거래법 등 관련법을 위배하지 않는 범위에서 본 약관을 개정할 수 있습니다.
+									</p>
+									<br>
+									<p>
+										3. 회사가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행 약관과 함께 초기화면에 그 적용일자 14일 이전부터 적용일자 전일까지 공지합니다.
+										다만, 변경 내용이 중대하거나 구매회원에게 불리한 경우에는 그 적용일자 30일 이전부터 적용일자 전일까지 공지하고 구매회원에게 개별 통지합니다.변경된 약관은
+										그 적용일자 이전으로 소급하여 적용되지 아니합니다.
+									</p>
+								</div>
+							</div>
+							<input type="checkbox" class="agree1">
+							<h3>개인정보 수집 및 이용</h3><span class="required">(필수)</span>
+							<div class="terms">
+								<div class="termsWrap">
+									<p class="termsSubject">1. 수집하는 개인정보 항목</p>
+									<br>
+									<p>
+										북스토리지는 회원가입, 원활한 고객상담, 각종 서비스 등 기본적인 서비스 제공을 위해 회원가입 시 아래와 같은 개인정보를 수집하고 있습니다.								
+									</p>
+									<p style="color:blue;">가. 필수항목: ID, 비밀번호, 성명, E-Mail, 연락처(또는 핸드폰), 생년월일, 주소, 법정대리인 성명(만14세 미만 회원의
+										경우)
+										나. 서비스 이용과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.
+										(IP Address, 쿠키, 방문 일시, 서비스 이용 기록, 불량 이용 기록)
+									</p>
+									<br>
+									<p class="termsSubject">2. 개인정보의 수집 및 이용 목적</p>
+									<br>
+									<p>가. 서비스 제공에 관한 업무 이행
+										- 홈페이지 회원에게 정보 서비스 제공
+										나. 회원관리
+										- 회원제 서비스 이용 및 제한적 본인 확인제에 따른 본인확인, 개인식별, 가입 의사 확인, 추후 법정 대리인 본인확인, 분쟁 조정을 위한 기록보존, 불만
+										처리 등 민원처리, 고지사항 전달
+									</p>
+									<br>
+									<p class="termsSubject">3. 개인정보의 보유 및 이용기간</p>
+									<br>
+									<p>회원 이용자의 개인정보는 개인정보보호법 따라 마지막 이용일(방문, 홈페이지 로그인)로부터 5년간 보관되며, 그 이후, 관계법령의 절차에
+										따라 파기합니다.
+										다만, 다음과 같은 경우에 갱인정보의 처리 및 이용이 중지됩니다.
+										가. 휴면회원 전환(마지막 이용일로부터 2년간 미사용)시점부터 계정 활성화 또는 파기 시까지
+										나. 회원 탈퇴 요청 시점부터 개인정보 파기시까지
+									</p>
+								</div>
+							</div>
+							<div class="btnWrap">
+								<button type="button" onclick="location.href='/'">동의하지 않습니다</button>
+								<input type="submit" value="동의합니다">
+							</div>
+
+						</form>
 					</div>
 				</div>
 			</div>

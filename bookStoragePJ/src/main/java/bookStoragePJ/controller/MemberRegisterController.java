@@ -11,4 +11,9 @@ public class MemberRegisterController {
 	public String agree() {
 		return "thymeleaf/register/memberAgree";
 	}
+	
+	@RequestMapping("userWrite")
+	public String wirte() {
+		return "thymeleaf/register/memberForm";
+	}
 }

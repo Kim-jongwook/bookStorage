@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/thymeleaf/common/layouts/default_layout">
+
+<th:block layout:fragment="contentCss">
+	<link href="/static/css/register/memberForm.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"/>
+</th:block>
+
+<th:block layout:fragment="contentScript">
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="/static/js/daumAddressScript.js"></script>
+</th:block>
+
+<th:block layout:fragment="content">
+	<section id="section">
+		<div class="sectionTop">
+			<div class="wrap">
+				<div class="snbBox">
+					<h3>회원정보</h3>
+					<ul class="snb">
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">아이디 찾기</a></li>
+						<li><a href="#">비밀번호 찾기</a></li>
+						<li><a href="/register/userAgree">회원가입</a></li>
+					</ul>
+				</div>
+				<div class="sectionMid">
+					<div class="subject">
+						<h2>회원가입</h2>
+						<div class="subjectRoot">
+							<ul>
+								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
+								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
+								<li>&nbsp;>&nbsp;&nbsp;회원가입</li>
+							</ul>
+						</div>
+						<div class="subjectButton">
+							<ul>
+								<li><a href="#"><i class="fal fa-share-alt"></i></i></i></a></li>
+								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="stepNavigation">
+						<ol>
+							<li><span class="stepNaviIndex">1</span><span class="stepNaviText">약관 동의</span></li>
+							<li><span class="stepNaviIndex">2</span><span class="stepNaviText">정보 입력</span></li>
+							<li><span class="stepNaviIndex">3</span><span class="stepNaviText">이메일 인증</span></li>
+							<li><span class="stepNaviIndex">4</span><span class="stepNaviText">가입 완료</span></li>
+						</ol>
+					</div>
+					<form action="" method="post" name="frm">
+						<h3 class="tit mt30">기본정보 입력</h3>
+						<p class="txt mt10">* 표시는 필수 입력 사항입니다.</p>
+						<table class="tbl mt10">
+							<colgroup>
+								<col class="col180">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr class="inputHidden"><th>회원번호</th><td><input type="text" name="memNum" value="123" readonly="readonly"></td></tr>
+								<tr><th>* 회원ID</th><td><input type="text" class="inputText wd20" name="memId"><span class="noticeText">6~12자리의 영문 또는 숫자 혼용, 특수문자 제외</span></td></tr>
+								<tr><th>* 비밀번호</th><td><input type="password" class="inputText wd40" name="memPw"><span class="noticeText">10~16자리 영문/숫자/특수문자[!@#$%^&*()]혼용</span></td></tr>
+								<tr><th>* 비밀번호 확인</th><td><input type="password" class="inputText wd40" name="memPwCon"></td></tr>
+								<tr><th>* 성명</th><td><input type="text" class="inputText wd20" name="memName"></td></tr>
+								<tr><th>* 생년월일</th><td><input type="date" class="inputText" name="memBirth"></td></tr>
+								<tr><th>&nbsp;&nbsp;&nbsp;성별</th><td><input type="radio" name="memgender" value="M">남&nbsp;<input type="radio" name="memgender" value="F">여</td></tr>
+								<tr><th>* 연락처</th><td><input type="text" class="inputText" name="memPhone"></td></tr>
+								<tr><th>* 이메일</th><td><input type="email" class="inputText" name="memEmail"></td></tr>
+								<tr>
+									<th rowspan="3">
+										* 주소
+									</th>
+									<td>
+										<button type="button" id="btnAddr" onclick="execDaumPostcode()">주소 검색</button>
+										<input type="text" class="inputText wd20" name="memPost" id="sample4_postcode" readonly="readonly">
+										<input type="text" class="inputText wd100 mt5" name="memAddr" id="sample4_roadAddress" readonly="readonly">
+										<input type="text" class="inputText wd100 mt5" name="memAddrDetail">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="choice">
+							<button type="button" id="btnBack" onclick="javascript:window.history.back()">뒤로 가기</button>
+							<input type="submit" value="회원가입 신청">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</th:block>
+
+</html>

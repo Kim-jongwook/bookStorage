@@ -125,6 +125,7 @@ references inventory(book_num) on delete cascade;
 create table members(
 	mem_num varchar(10) not null,
 	mem_id varchar(12) not null,
+	mem_name varchar(50) not null,
 	mem_pw varchar(50) not null,
 	mem_birth date not null,
 	mem_phone varchar(30) not null,
@@ -133,6 +134,8 @@ create table members(
 	mem_point integer null,
 	mem_regist date not null
 );
+
+select * from members;
 
 alter table members
 add constraint mem_num_pk primary key(mem_num);
@@ -211,3 +214,41 @@ add constraint rental_num_book_num_fk foreign key(rental_num, book_num)
 references rental(rental_num, book_num) on delete cascade,
 add constraint review_member_num_fk foreign key(mem_num)
 references members(mem_num) on delete set null;
+
+/*직원*/
+create table employees(
+	emp_num varchar(10) primary key,
+	emp_id varchar(12) not null,
+	emp_name varchar(50) not null,
+	emp_pw varchar(50) not null,
+	emp_jumin varchar(13) not null,
+	emp_phone varchar(30) not null,
+	emp_email varchar(40) null,
+	emp_hire_date date not null,
+	emp_resign_date date null
+);
+
+/*누락 추가*/
+alter table members
+add column mem_name varchar(50) not null;
+
+alter table members
+add column mem_addr varchar(255) not null;
+
+alter table employees
+add column emp_addr varchar(255) not null;
+
+alter table members
+add column mem_post varchar(5) not null;
+
+alter table employees
+add column emp_post varchar(5) not null;
+
+alter table members
+add column mem_addr_detail varchar(255) null;
+
+alter table employees
+add column emp_addr_detail varchar(255) null;
+
+alter table members
+add column mem_gender varchar(1) null;
