@@ -109,6 +109,7 @@
 #section .sectionTop .wrap .sectionMid .stepNavigation ol{
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 30px;
 }
 
 #section .sectionTop .wrap .sectionMid .stepNavigation ol li{
@@ -119,15 +120,15 @@
 	border: 1px solid #cdcdcd;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(2){
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(3){
 	border: 2px solid #5692bc;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(2) .stepNaviIndex{
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(3) .stepNaviIndex{
 	color: #5692bc;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(2) .stepNaviText{
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(3) .stepNaviText{
 	color: #333333;
 }
 
@@ -150,127 +151,26 @@
 	height: 100%;
 	text-align: center;
 }
+/*여기까지*/
 
-#section .sectionTop .wrap .sectionMid form .tbl{
-	width: 100%;
-    border-top: 2px solid #426f8f;
-    border-bottom: 1px solid #a6a6a6;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl #sample4_postcode{
-	background-color: #eee;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl .col180{
-	width: 180px;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl th{
-	padding: 10px;
-	background: #f5f5f5;
-	border-top: 1px solid #dfdfdf;
-	font-size: 16px;
-	font-weight: normal;
-	color: #333333;
-	text-align: left;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl td{
-	padding: 10px;
-	border-top: 1px solid #dfdfdf;
-	color: #333333;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl .btn{
-	font-size: 16px;
-	width: 130px;
-	color: #fff;
-	background-color: #6c6c6c;
-	border: 1px solid #dfdfdf;
-	box-sizing: border-box;
-	height: 35px;
-	vertical-align: top;
-	cursor: pointer;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl .inputHidden{
-    display: none;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl .inputText{
-	height: 35px;
-    padding: 0 18px;
-    font-size: 16px;
-    color: #333333;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl .noticeText{
-	display: block;
-	margin: 10px 0px 0px 8px;
-    font-size: 16px;
-    color: #777777;
-}
-
-#section .sectionTop .wrap .sectionMid form .tbl .btn{
-    font-size: 16px;
-    width: 130px;
-    color: #fff;
-    background-color: #6c6c6c;
-    border: 1px solid #dfdfdf;
-    box-sizing: border-box;
-    height: 35px;
-    vertical-align: top;
-    cursor: pointer;
-}
-
-#section .sectionTop .wrap .sectionMid form .choice{
-	margin: 40px 0;
+#section .sectionTop .wrap .sectionMid .wrap2 .emailImg img{
+	display: inline-block;
+	width: 20%;
 	text-align: center;
 }
 
-#section .sectionTop .wrap .sectionMid form .choice #btnBack{
-	width: 175px;
-	height: 40px;
-	color: #fff;
-	background-color: #6c6c6c;
-	cursor: pointer;
-	border: none;
-	font-size: 16px;
-	vertical-align: top;
-}
-
-#section .sectionTop .wrap .sectionMid form .choice input[type="submit"]{
-	width: 175px;
-	height: 40px;
-	color: #fff;
-	border: none;
-	font-size: 16px;
-	margin-left: 22px;
-}
-
-input{
-	box-sizing: border-box;
-	border: 1px solid #dfdfdf;
-}
-button{
-}
-.wd20{width: 20%;}
-.wd40{width: 40%;}
-.wd100{width: 100%;}
-.tit{
+#section .sectionTop .wrap .sectionMid .wrap2 h2{
+	text-align: center;
+	font-size: 30px;
 	font-weight: bold;
-	font-size: 18px;
-	color: #333333;
-}
-.txt{
-	font-size: 16px;
-	color: #999999;
+	color: #333;	
 }
 
-
-
-
-
+#section .sectionTop .wrap .sectionMid .wrap2 p{
+	text-align: center;
+	font-size: 20px;
+	color: #333;
+}
 
 
 

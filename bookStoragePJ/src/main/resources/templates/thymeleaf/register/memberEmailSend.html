@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/thymeleaf/common/layouts/default_layout">
+
+<th:block layout:fragment="contentCss">
+	<link href="/static/css/register/memberEmailSend.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"/>
+</th:block>
+
+<th:block layout:fragment="contentScript">
+
+</th:block>
+
+<th:block layout:fragment="content">
+	<section id="section">
+		<div class="sectionTop">
+			<div class="wrap">
+				<div class="snbBox">
+					<h3>회원정보</h3>
+					<ul class="snb">
+						<li><a href="#">로그인</a></li>
+						<li><a href="#">아이디 찾기</a></li>
+						<li><a href="#">비밀번호 찾기</a></li>
+						<li><a href="/register/userAgree">회원가입</a></li>
+					</ul>
+				</div>
+				<div class="sectionMid">
+					<div class="subject">
+						<h2>회원가입</h2>
+						<div class="subjectRoot">
+							<ul>
+								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
+								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
+								<li>&nbsp;>&nbsp;&nbsp;회원가입</li>
+							</ul>
+						</div>
+						<div class="subjectButton">
+							<ul>
+								<li><a href="#"><i class="fal fa-share-alt"></i></i></i></a></li>
+								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
+							</ul>
+						</div>
+					</div><!--메뉴 경로와 상단여기까지-->
+					<div class="stepNavigation">
+						<ol>
+							<li><span class="stepNaviIndex">1</span><span class="stepNaviText">약관 동의</span></li>
+							<li><span class="stepNaviIndex">2</span><span class="stepNaviText">정보 입력</span></li>
+							<li><span class="stepNaviIndex">3</span><span class="stepNaviText">이메일 인증</span></li>
+							<li><span class="stepNaviIndex">4</span><span class="stepNaviText">가입 완료</span></li>
+						</ol>
+					</div>
+					<div class="wrap2">
+						<div class="emailImg">
+							<img src="/static/img/email.png">
+						</div>
+						<h2 class="mt30">인증 메일이 발송되었습니다.</h2>
+						<p>
+							기재하신 메일주소(<span style="color:#5792bc; font-weight: bold;">[[${memEmail}]]</span>)의 메일함에서 인증 메일을 확인 바랍니다.</p>
+						<p>이메일의 인증 버튼을 선택하면 회원가입이 완료됩니다.</p>
+						<div class="noticeBox">
+							<h3>유의사항</h3>
+							<p>1. 메일이 도착하지 않았다면 스팸함을 확인해 주시기 바랍니다.</p>
+							<p>2. 이메일 주소 오기입으로 인해 메일이 수신되지 않았다면, 고객센터로 연락 주시기 바랍니다.</p>
+								고객센터 전화번호: 7777-7777
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</th:block>
+
+</html>

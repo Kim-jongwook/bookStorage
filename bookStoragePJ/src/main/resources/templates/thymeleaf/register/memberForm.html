@@ -42,7 +42,7 @@
 								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
 							</ul>
 						</div>
-					</div>
+					</div><!--메뉴 경로와 상단여기까지-->
 					<div class="stepNavigation">
 						<ol>
 							<li><span class="stepNaviIndex">1</span><span class="stepNaviText">약관 동의</span></li>
@@ -62,8 +62,8 @@
 							<tbody>
 								<tr class="inputHidden"><th>회원번호</th><td><input type="text" name="memNum" th:value="${memberCommand.memNum}" readonly="readonly"></td></tr>
 								<tr><th>* 회원ID</th><td><input type="text" class="inputText wd20" name="memId" id="memId" th:value="${memberCommand.memId}">
-								<button type="button" class="btn" onclick="checkUserId()">중복 확인</button><br>
-								<span style="color:red; font-weight: bold; display: inline-block; margin: 10px 0 0 8px;" th:if="${#fields.hasErrors('memPw')}" th:errors="*{memId}"></span>
+								<button type="button" class="btn" id="checkBtn1" onclick="checkUserId()">중복 확인</button><br>
+								<span style="color:red; font-weight: bold; display: inline-block; margin: 10px 0 0 8px;" th:if="${#fields.hasErrors('memId')}" th:errors="*{memId}"></span>
 								<span th:unless="${#fields.hasErrors('memPw')}" class="noticeText">6~12자리의 영문 또는 숫자 혼용, 특수문자 제외</span></td>
 								<tr><th>* 비밀번호</th><td><input type="password" class="inputText wd40" name="memPw"><br>
 								<span style="color:red; font-weight: bold; display: inline-block; margin: 10px 0 0 8px;" th:if="${#fields.hasErrors('memPw')}" th:errors="*{memPw}"></span>
@@ -80,7 +80,7 @@
 								<tr><th>* 연락처</th><td><input type="text" class="inputText" name="memPhone" th:value="${memberCommand.memPhone}">
 								<span style="color:red; font-weight: bold;" th:if="${#fields.hasErrors('memEmail')}" th:errors="*{memEmail}"></span></td></tr>
 								<tr><th>* 이메일</th><td><input type="email" class="inputText wd40" name="memEmail" id="memEmail" th:value="${memberCommand.memEmail}">
-								<button type="button" class="btn" id="emailCheck" onclick="checkUserEmail()">중복 확인</button>
+								<button type="button" class="btn" id="checkBtn2" onclick="checkUserEmail()">중복 확인</button>
 								<span style="color:red; font-weight: bold;" th:if="${#fields.hasErrors('memEmail')}" th:errors="*{memEmail}"></span></td></tr>
 								<tr>
 									<th rowspan="3">
@@ -97,7 +97,7 @@
 						</table>
 						<div class="choice">
 							<button type="button" id="btnBack" onclick="javascript:window.history.back()">뒤로 가기</button>
-							<input type="submit" value="회원가입 신청">
+							<input type="submit" id="submit" value="회원가입 신청" disabled="disabled">
 						</div>
 					</form>
 				</div>

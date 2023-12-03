@@ -4,10 +4,12 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -21,6 +23,7 @@ public class MemberCommand {
 	@NotBlank(message = "비밀번호 확인을 입력해주세요.")
 	String memPwCon;
 	@NotBlank(message = "성명을 입력해주세요.")
+	@Size(min = 2, max = 10)
 	String memName;
 	@NotBlank(message = "주소를 입력해주세요.")
 	String memAddr;
@@ -30,6 +33,7 @@ public class MemberCommand {
 	@NotBlank(message = "전화번호를 입력해주세요.")
 	String memPhone;
 	@NotBlank(message = "이메일을 입력해주세요.")
+	@Email
 	String memEmail;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

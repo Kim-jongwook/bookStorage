@@ -30,7 +30,7 @@ public class MemberWriteService {
 		dto.setMemNum(memberCommand.getMemNum());
 		dto.setMemPhone(memberCommand.getMemPhone());
 		dto.setMemPost(memberCommand.getMemPost());
-		dto.setMemPw(memberCommand.getMemPw());
+		dto.setMemPw(passwordEncoder.encode(memberCommand.getMemPw()));
 		dto.setMemEmail(memberCommand.getMemEmail());
 		dto.setMemBirth(memberCommand.getMemBirth());
 		
@@ -42,8 +42,8 @@ public class MemberWriteService {
 			String html = "<html><body>"
 					+ "<h2 style='font-weight: 700; font-size: 2rem; line-height: 2.75rem; padding-top: 64px; margin: 0;'>환영합니다 :-)</h2><br>"
 					+ "<p>유일무이한 책 대여 서비스를 제공하고 있는 북스토리지입니다.<br>"
-					+ "서비스 이용을 위해 이메일 인증이 필요하며, 아래의 버튼을 통해 <span style='color:blue;'>이메일을 인증</span>해주세요."
-			        + "<button type='button' style='width:120px; height:50px; background-color:blue;' onclick='location.href=http://192.168.219.100:8080/memConfirm?chk=" + dto.getMemEmail() + "'>이메일 인증</button>";
+					+ "서비스 이용을 위해 이메일 인증이 필요하며, 아래의 버튼을 통해 <span style='color:blue;'>이메일을 인증</span>해주세요.<br><br>"
+			        + "<button type='button' style='width:120px; height:50px; background-color:#005eb2; color:#fff;' onclick='location.href=http://192.168.219.100:8080/memConfirm?chk=" + dto.getMemEmail() + "'>이메일 인증</button>";
 			String subject = "[북스토리지] 가입을 환영합니다.";
 			String fromEmail = "kimzong1smtp@gmail.com";
 			String toEmail = dto.getMemEmail();

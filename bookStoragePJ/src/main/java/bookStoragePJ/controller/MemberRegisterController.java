@@ -46,7 +46,8 @@ public class MemberRegisterController {
 			result.rejectValue("memPwCon", "memberCommand.memPwCon", "비밀번호가 서로 일치하지 않습니다.");
 			return "thymeleaf/register/memberForm";
 		}
+		
 		memberWriteService.execute(memberCommand, model);
-		return "thymeleaf/register/memberEmail";
+		return "thymeleaf/register/memberEmailSend";
 	}
 }
