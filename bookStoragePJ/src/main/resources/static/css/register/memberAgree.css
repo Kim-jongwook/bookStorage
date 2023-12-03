@@ -220,8 +220,7 @@
 
 #section .sectionTop .wrap .sectionMid .container form input[type="submit"]{
 	width: 175px;
-	height: 38px;
-	line-height: 38px;
+	height: 40px;
 	color: #fff;
 	background-color: #5692bc;
 	cursor: pointer;
@@ -232,8 +231,7 @@
 
 #section .sectionTop .wrap .sectionMid .container form button{
 	width: 175px;
-	height: 38px;
-	line-height: 38px;
+	height: 40px;
 	color: #fff;
 	background-color: #6c6c6c;
 	cursor: pointer;
@@ -243,7 +241,6 @@
 .txt{
 	color: #666666;
 }
-
 
 
 

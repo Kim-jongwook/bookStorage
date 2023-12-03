@@ -1,18 +1,14 @@
 @charset "UTF-8";
+
 @font-face{
-	font-family: NotoSansKR;
-	src: url('/static/font/NotoSansKR-Light.ttf') format('truetype');
-	font-weight: 300;
+	font-family: NanumGothic;
+	src: url('/static/font/NanumGothic.ttf') format('truetype');
+	font-weight: normal;
 }
 @font-face{
-	font-family: NotoSansKR;
-	src: url('/static/font/NotoSansKR-Regular.ttf') format('truetype');
-	font-weight: 400;
-}
-@font-face{
-	font-family: NotoSansKR;
-	src: url('/static/font/NotoSansKR-Medium.ttf') format('truetype');
-	font-weight: 500;
+	font-family: NanumGothic;
+	src: url('/static/font/NanumGothicBold.ttf') format('truetype');
+	font-weight: bold;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -39,9 +35,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	font-family: 'NotoSansKR', sans-serif;
-	font-weight: 400;
+body, input, button {
+	font-family: 'NanumGothic', sans-serif;
 	line-height: 1;
 }
 ol, ul {

@@ -181,9 +181,7 @@
 	color: #333333;
 }
 
-#section .sectionTop .wrap .sectionMid form .tbl #btnAddr{
-	font-family: 'NotoSansKR', sans-serif;
-	font-weight: 400;
+#section .sectionTop .wrap .sectionMid form .tbl .btn{
 	font-size: 16px;
 	width: 130px;
 	color: #fff;
@@ -207,9 +205,22 @@
 }
 
 #section .sectionTop .wrap .sectionMid form .tbl .noticeText{
-    margin-left: 8px;
+	display: block;
+	margin: 10px 0px 0px 8px;
     font-size: 16px;
     color: #777777;
+}
+
+#section .sectionTop .wrap .sectionMid form .tbl .btn{
+    font-size: 16px;
+    width: 130px;
+    color: #fff;
+    background-color: #6c6c6c;
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    height: 35px;
+    vertical-align: top;
+    cursor: pointer;
 }
 
 #section .sectionTop .wrap .sectionMid form .choice{
@@ -219,19 +230,18 @@
 
 #section .sectionTop .wrap .sectionMid form .choice #btnBack{
 	width: 175px;
-	height: 38px;
-	line-height: 38px;
+	height: 40px;
 	color: #fff;
 	background-color: #6c6c6c;
 	cursor: pointer;
 	border: none;
 	font-size: 16px;
+	vertical-align: top;
 }
 
 #section .sectionTop .wrap .sectionMid form .choice input[type="submit"]{
 	width: 175px;
-	height: 38px;
-	line-height: 38px;
+	height: 40px;
 	color: #fff;
 	background-color: #5692bc;
 	cursor: pointer;
@@ -243,14 +253,14 @@
 input{
 	box-sizing: border-box;
 	border: 1px solid #dfdfdf;
-	font-family: 'NotoSansKR', sans-serif;
-	font-weight: 400;
+}
+button{
 }
 .wd20{width: 20%;}
 .wd40{width: 40%;}
 .wd100{width: 100%;}
 .tit{
-	font-weight: 500;
+	font-weight: bold;
 	font-size: 18px;
 	color: #333333;
 }
