@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+		$(function(){
+			$(".hide1").click(function(){
+				$(this).css("display","none");
+				$("#memId").focus();
+			});
+			$(".hide2").click(function(){
+				$(this).css("display","none");
+				$("#memPw").focus();
+			});
+		});

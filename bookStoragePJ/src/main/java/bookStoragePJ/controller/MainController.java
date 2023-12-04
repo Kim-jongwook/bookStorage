@@ -1,17 +1,16 @@
 package bookStoragePJ.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import bookStoragePJ.command.LoginCommand;
 
 @Controller
 public class MainController {
 	
 	@RequestMapping("/")
-	public String main() {
+	public String main(@ModelAttribute("loginCommand")LoginCommand loginCommand) {
 		return "thymeleaf/main";
-	}
-	@RequestMapping("welcome")
-	public String welcom() {
-		return "thymeleaf/register/memberWelcome";
 	}
 }

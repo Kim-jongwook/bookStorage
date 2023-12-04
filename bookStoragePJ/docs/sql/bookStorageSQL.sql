@@ -252,3 +252,6 @@ add column emp_addr_detail varchar(255) null;
 
 alter table members
 add column mem_gender varchar(1) null;
+
+insert into employees
+values ('emp1001', 'admin', '관리자', '123456', '9307081234567', '010-2349-0834', 'kimzong1@gmail.com', now(), null, '우리집 안방', '07215', '창고방' );

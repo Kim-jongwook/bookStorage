@@ -22,4 +22,28 @@ update members set mem_email_conf = 'T'
 
 </update>
 
+<select id="selectIdCheck" parameterType="string" resultType="string">
+select mem_id from members
+where mem_id = #{userId}
+union
+select emp_id from employees
+where emp_id = #{userId}
+</select>
+
+<select id="selectEmailCheck" parameterType="string" resultType="string">
+select mem_email from members
+where mem_email = #{userEmail}
+union
+select emp_email from employees
+where emp_email = #{userEmail}
+</select>
+
+<select id="loginSelect" parameterType="string" resultType="authInfo">
+select mem_id as memId, mem_pw as memPw, mem_name as memName, 'mem' grade, mem_email as userEmail, mem_email_conf as userEmailCheck from members 
+where mem_id = #{memId}
+union
+select emp_id, emp_pw, emp_name, 'emp', emp_email, 'T' from employees 
+where emp_id = #{memId}
+</select>
+
 </mapper>
