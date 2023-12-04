@@ -10,4 +10,8 @@ public class MainController {
 	public String main() {
 		return "thymeleaf/main";
 	}
+	@RequestMapping("welcome")
+	public String welcom() {
+		return "thymeleaf/register/memberWelcome";
+	}
 }

@@ -50,4 +50,9 @@ public class MemberRegisterController {
 		memberWriteService.execute(memberCommand, model);
 		return "thymeleaf/register/memberEmailSend";
 	}
+	
+	@RequestMapping("email")
+	public String emailTest() {
+		return "thymeleaf/register/memberEmailSendTest";
+	}
 }

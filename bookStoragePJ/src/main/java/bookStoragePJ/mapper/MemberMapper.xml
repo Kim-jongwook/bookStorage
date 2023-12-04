@@ -14,4 +14,12 @@ insert into members(mem_num, mem_id, mem_pw, mem_name, mem_addr, mem_addr_detail
 values(#{memNum}, #{memId}, #{memPw}, #{memName}, #{memAddr}, #{memAddrDetail}, #{memPost}, #{memGender}, #{memPhone},
 		#{memEmail}, 'N', #{memBirth}, now(), 0)
 </insert>
+
+<update id="memCheckUpdate" parameterType="string">
+update members set mem_email_conf = 'T' 
+		where mem_email_conf= 'N' 
+		and mem_email = #{email}
+
+</update>
+
 </mapper>

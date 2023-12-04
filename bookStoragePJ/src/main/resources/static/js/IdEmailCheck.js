@@ -19,7 +19,7 @@
         function checkUserId() {
             $.ajax({
                 type: "post",
-                url: "/login/userIdCheck",
+                url: "/check/userIdCheck",
                 data: { "userId": $("#memId").val() },
                 dataType: "text",
                 success: function (result) {
@@ -43,7 +43,7 @@
         function checkUserEmail() {
             $.ajax({
                 type: "post",
-                url: "/login/userEmailCheck",
+                url: "/check/userEmailCheck",
                 data: { "userEmail": $("#memEmail").val() },
                 dataType: "text",
                 success: function (result) {

@@ -8,4 +8,5 @@ import bookStoragePJ.domain.MemberDTO;
 public interface MemberMapper {
 	public String autoNum();
 	public int memInsert(MemberDTO dto);
+	public int memCheckUpdate(String email);
 }

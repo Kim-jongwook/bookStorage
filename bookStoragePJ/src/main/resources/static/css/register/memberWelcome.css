@@ -120,15 +120,15 @@
 	border: 1px solid #cdcdcd;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(3){
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(4){
 	border: 2px solid #5692bc;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(3) .stepNaviIndex{
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(4) .stepNaviIndex{
 	color: #5692bc;
 }
 
-#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(3) .stepNaviText{
+#section .sectionTop .wrap .sectionMid .stepNavigation ol li:nth-child(4) .stepNaviText{
 	color: #333333;
 }
 

@@ -3,7 +3,7 @@
 	layout:decorate="/thymeleaf/common/layouts/default_layout">
 
 <th:block layout:fragment="contentCss">
-	<link href="/static/css/register/memberEmailSend.css" rel="stylesheet">
+	<link href="/static/css/register/memberWelcome.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"/>
 </th:block>
 
@@ -50,19 +50,20 @@
 						</ol>
 					</div>
 					<div class="wrap2">
-						<img src="/static/img/email.png">
-						<h2 class="mt40">인증 메일이 발송되었습니다.</h2>
+						<i class="fas fa-check-circle" style="color: #3E65A2; font-size: 184px; margin-top: -10px;"></i>
+						<h2 class="mt40">회원가입이 완료되었습니다.</h2>
 						<p class="tit mt40">
-							기재하신 메일주소(<span style="color:#5792bc; font-weight: bold; font-size: 15px;">[[${memEmail}]]</span>)에서 인증 메일을 확인 바랍니다.
+							회원가입 절차가 모두 완료되었습니다.에서 인증 메일을 확인 바랍니다.
 						</p>
 						<p class="tit mt10">
-							수신받은 이메일에서 인증 버튼을 선택하면 회원가입이 완료됩니다.
+							지금바로 북스토리지에 로그인 후 다양한 서적을 대여<span style="color:#5792bc; font-weight: bold; font-size: 15px;">[[${memEmail}]]</span>하고 예약해보세요
 						</p>
 						<div class="noticeBox mt40">
 							<h3 class="mt20">유의사항</h3>
 							<p class="txt mt20">1. 인증 메일이 수신되지 않았다면 <span style="font-weight: bold;">스팸함</span>을 확인해 주시기 바랍니다.</p>
 							<p class="txt mt15">2. 이메일 주소 오기입으로 인해 메일이 수신되지 않았다면, <span style="font-weight: bold;">고객센터(1899-1234)</span>로 연락 주시기 바랍니다.</p>
 							<button type="button" onclick="location.href='/'">홈으로</button>
+							<button type="button" onclick="location.href='/'">로그인</button>
 						</div>
 					</div>
 				</div>
