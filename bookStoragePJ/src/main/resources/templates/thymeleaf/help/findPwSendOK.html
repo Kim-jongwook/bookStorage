@@ -3,7 +3,7 @@
 	layout:decorate="/thymeleaf/common/layouts/default_layout">
 
 <th:block layout:fragment="contentCss">
-	<link href="/static/css/register/memberWelcome.css" rel="stylesheet">
+	<link href="/static/css/help/findPw.css" rel="stylesheet">
 </th:block>
 
 <th:block layout:fragment="contentScript">
@@ -30,7 +30,7 @@
 							<ul>
 								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
 								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
-								<li>&nbsp;>&nbsp;&nbsp;회원가입</li>
+								<li>&nbsp;>&nbsp;&nbsp;비밀번호 재발급</li>
 							</ul>
 						</div>
 						<div class="subjectButton">
@@ -40,35 +40,25 @@
 							</ul>
 						</div>
 					</div><!--메뉴 경로와 상단여기까지-->
-					<div class="stepNavigation">
-						<ol>
-							<li><span class="stepNaviIndex">1</span><span class="stepNaviText">약관 동의</span></li>
-							<li><span class="stepNaviIndex">2</span><span class="stepNaviText">정보 입력</span></li>
-							<li><span class="stepNaviIndex">3</span><span class="stepNaviText">이메일 인증</span></li>
-							<li><span class="stepNaviIndex">4</span><span class="stepNaviText">가입 완료</span></li>
-						</ol>
-					</div>
-					<div class="wrap2">
-						<i class="fas fa-check-circle" style="color: #3E65A2; font-size: 184px; margin-top: -10px;"></i>
-						<h2 class="mt40">회원가입이 완료되었습니다.</h2>
+										<div class="wrap2">
+						<img src="/static/img/email.png">
+						<h2 class="mt40">임시 비밀번호가 메일로 발송되었습니다.</h2>
 						<p class="tit mt40">
-							온라인 서적 대여 서비스&nbsp;<span style="color:#5792bc; font-weight: bold;">북스토리지</span>에 가입하신 것을 환영합니다.
+							기재하신 메일주소(<span style="color:#5792bc; font-weight: bold; font-size: 15px;">[[${memEmail}]]</span>)에서 인증 메일을 확인 바랍니다.
 						</p>
 						<p class="tit mt10">
-							로그인 후 모든 서비스를 이용할 수 있습니다.
+							임시 비밀번호는 꼭 안전한 비밀번호로 변경하여 이용바랍니다.
 						</p>
-						<div class="guideBox mt40">
-							<p>회원가입 내역 확인 및 수정은 <span style="color:#da3600;">마이페이지 > 회원정보수정</span>에서 가능합니다.</p>
-						</div>
-						<div class="noticeBox">
+						<div class="noticeBox mt40">
+							<h3 class="mt20">유의사항</h3>
+							<p class="txt mt20">1. 인증 메일이 수신되지 않았다면 <span style="font-weight: bold;">스팸함</span>을 확인해 주시기 바랍니다.</p>
+							<p class="txt mt15">2. 이메일 주소 오기입으로 인해 메일이 수신되지 않았다면, <span style="font-weight: bold;">고객센터(1899-1234)</span>로 연락 주시기 바랍니다.</p>
 							<button type="button" onclick="location.href='/'">홈으로</button>
-							<button type="button" onclick="location.href='/'">로그인</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-</th:block>
-
+	</th:block>
 </html>

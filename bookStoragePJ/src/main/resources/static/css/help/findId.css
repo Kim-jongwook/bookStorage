@@ -1,0 +1,104 @@
+@charset "UTF-8";
+#section .sectionTop{
+	background: url(/static/img/sub_visual.jpg) no-repeat center top;
+	width: 100%;
+}
+
+#section .sectionTop .wrap{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+}
+
+#section .sectionTop .wrap .snbBox{
+	padding-top: 79px;
+}
+#section .sectionTop .wrap .snbBox h3{
+	width: 230px;
+	height: 100px;
+	background-color: #005EB2;
+	text-align: center;
+	line-height: 100px;
+	font-size: 25px;
+	color: #fff;
+}
+#section .sectionTop .wrap .snbBox .snb li{
+	border-right: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	text-align: left;
+	width: 230px;
+	height: 50px;
+}
+
+#section .sectionTop .wrap .snbBox .snb li:nth-child(2){
+	background: url(/static/img/lnb_arr.png) no-repeat right center;
+}
+
+#section .sectionTop .wrap .snbBox .snb li a{
+	font-size: 18px;
+	color: #555555;
+	text-decoration: none;
+	line-height: 50px;
+	padding-left: 20px;
+}
+
+#section .sectionTop .wrap .snbBox .snb li:nth-child(2) a{
+	color: #005EB2;
+}
+
+#section .sectionTop .wrap .sectionMid{
+	width: 100%;
+	padding: 79px 0 0 50px;
+}
+
+#section .sectionTop .wrap .sectionMid .subject{
+	position: relative;
+	padding-bottom: 74px;
+}
+
+#section .sectionTop .wrap .sectionMid .subject h2{
+	color: #fff;
+	font-size: 35px;
+	text-shadow: 0 0 10px rgba(75, 98, 169, 1);
+}
+
+#section .sectionTop .wrap .sectionMid .subjectRoot ul{
+	margin-top: 20px;
+}
+
+#section .sectionTop .wrap .sectionMid .subjectRoot ul li{
+	display: inline-block;
+	color: #fff;
+	font-size: 20px;
+	text-shadow: 0 0 10px rgba(75, 98, 169, 1);
+}
+
+#section .sectionTop .wrap .sectionMid .subjectRoot ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+
+#section .sectionTop .wrap .sectionMid .subjectButton{
+	position: absolute;
+	right: 0;
+	top: 45px;
+}
+
+#section .sectionTop .wrap .sectionMid .subjectButton ul li{
+	display: inline-block;
+	box-sizing: border-box;
+	border: 1px solid #e8e8e8;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+#section .sectionTop .wrap .sectionMid .subjectButton ul li a{
+	color: #fff;
+	line-height: 38px;
+	font-size: 23px;
+}

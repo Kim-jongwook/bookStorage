@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/thymeleaf/common/layouts/default_layout">
+
+<th:block layout:fragment="contentCss">
+	<link href="/static/css/help/findId.css" rel="stylesheet">
+</th:block>
+
+<th:block layout:fragment="contentScript">
+
+</th:block>
+
+<th:block layout:fragment="content">
+	<section id="section">
+		<div class="sectionTop">
+			<div class="wrap">
+				<div class="snbBox">
+					<h3>회원정보</h3>
+					<ul class="snb">
+						<li><a href="#">로그인</a></li>
+						<li><a href="/help/findId">아이디 찾기</a></li>
+						<li><a href="/help/findPw">비밀번호 재발급</a></li>
+						<li><a href="/register/userAgree">회원가입</a></li>
+					</ul>
+				</div>
+				<div class="sectionMid">
+					<div class="subject">
+						<h2>회원가입</h2>
+						<div class="subjectRoot">
+							<ul>
+								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
+								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
+								<li>&nbsp;>&nbsp;&nbsp;아이디 찾기</li>
+							</ul>
+						</div>
+						<div class="subjectButton">
+							<ul>
+								<li><a href="#"><i class="fal fa-share-alt"></i></i></i></a></li>
+								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
+							</ul>
+						</div>
+					</div><!--메뉴 경로와 상단여기까지-->
+					<div th:if="${memId != null}">
+					당신의 아이디는 [[${#strings.substring(memId,0,4)}]]
+					<th:block th:each=" i : ${#numbers.sequence(1, #strings.length(memId) - 4 )}">
+					*
+					</th:block>
+					입니다
+					</div>
+					
+					<div th:if="${memId == null}">
+						입력하신 정보에 해당하는 아이디가 존재하지 않습니다. 
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</th:block>
+
+</html>

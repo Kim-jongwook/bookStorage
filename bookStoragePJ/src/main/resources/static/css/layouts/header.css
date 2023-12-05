@@ -7,6 +7,15 @@
 	margin: 0 auto;
 }
 
+#header .header_top .memInfo{
+	position: absolute;
+	right: 0;
+	top: 75px;
+	padding: 5px 10px 5px 10px;
+	background-color: #eee;
+	border-radius: 5px;
+}
+
 #header .header_top p {
 	text-align: center;
 	padding: 20px 0;
@@ -28,11 +37,13 @@
 }
 
 #header .header_top .siteMenu ul li {
+	margin-left: 5px;
 	display: inline-block;
 }
 
 #header .header_top .siteMenu ul li:nth-child(2) {
 	color: #b4b4b4;
+	pointer-events: none;
 }
 
 #header .header_top .siteMenu ul li a {
@@ -44,7 +55,6 @@
 #header .header_top .siteMenu ul li a:focus {
 	color: #4073cc;
 	transition: 0.3s;
-	/*text-decoration: underline;*/
 }
 
 #header .header_bottom #gnb {
@@ -76,13 +86,14 @@
 }
 
 #header .header_bottom #gnb ul li {
+	position: relative;
 	box-sizing: border-box;
 	display: inline-block;
 	height: 60px;
 	text-align: center;
 }
 
-#header .header_bottom #gnb ul .width25 {
+#header .header_bottom .width25 {
 	width: calc(25% - 15px);
 }
 
@@ -90,10 +101,24 @@
 	background-color: #005eb2;
 	width: 60px;
 }
+#header .header_bottom #gnb ul li:not(:first-child)::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 2px;
+	background-color: #1b57ab;
+	display: none;
+}
 
-#header .header_bottom #gnb ul li:hover {
+#header .header_bottom #gnb ul li:not(:first-child):hover::after {
+	display: block;
+}
+
+#header .header_bottom #gnb ul li:not(:first-child):hover {
 	background-color: #3780ca;
-	border-bottom: 2px solid #1B57AB;
 }
 
 #header .header_bottom #gnb ul li:hover a{
@@ -114,42 +139,4 @@
 	vertical-align: middle;
 	font-size: 30px;
 	color: #fff;
-}
-
-#header .header_bottom #lnb {
-	display: none;
-}
-
-#header .header_bottom #lnb {
-	background-color: #fff;
-}
-
-#header .header_bottom #lnb li{
-	border: 1px solid #e8e8e8;
-	box-sizing: border-box;
-}
-
-#header .header_bottom #lnb li:hover{
-	background-color: #3780ca;
-}
-
-#header .header_bottom #lnb a {
-	color: #fff;
-	text-decoration: none;
-}
-
-#header .header_bottom #lnb a:hover {
-	color: #fff;
-	text-decoration: solid;
-}
-
-#header .header_bottom #lnb.active {
-	display: block;
-}
-
-.me {
-	margin: 0 auto;
-	width: 1200px;
-	height: 1500px;
-	background-color: darkgoldenrod;
 }

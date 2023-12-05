@@ -1,25 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<link href="static/css/reset/reset.css" rel="stylesheet">
-	<link href="static/css/header.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(function(){
-			var gnb = $("#gnb").offset().top;
-			$(window).scroll(function(){
-				var window = $(this).scrollTop();
-				if(gnb <= window){
-					$("#gnb").addClass("fixed");
-				}else{
-					$("#gnb").removeClass("fixed");
-				}
-			});
-		});
-	</script>
-</head>
 <body>
 <th:block th:fragment="headerFragment">
 	<header id="header">
@@ -29,13 +9,30 @@
 					<img src="/static/img/logo2.png" alt="로고">
 				</a>
 			</p>
-			<div class="siteMenu">
-				<ul>
-					<li><a href="">로그인</a></li>
-					<li> | </li>
-					<li><a href="">회원가입</a></li>
-				</ul>
-			</div>
+			<th:block th:if="${session.auth == null}">
+				<div class="siteMenu">
+					<ul>
+						<li><a href="">로그인</a></li>
+						<li> | </li>
+						<li><a href="/register/userAgree">회원가입</a></li>
+					</ul>
+				</div>
+			</th:block>
+
+			<th:block th:if="${session.auth != null}">
+				<div class="siteMenu">
+					<ul>
+						<li><a href="login/logout">로그아웃</a></li>
+						<li> | </li>
+						<li><a href="#">정보수정</a></li>
+					</ul>
+				</div>
+			</th:block>
+			<th:block th:if="${session.auth != null && session.auth.grade == 'emp'}">
+				<div class="memInfo">
+					<span>[[${session.auth.memName}]]([[${session.auth.memId}]])</span> | <span style="color: #da3600; font-weight: bold;">관리자</span>
+				</div>
+			</th:block>
 		</div>
 		<div class="header_bottom">
 			<div id="gnb">
@@ -45,38 +42,6 @@
 				 --><li class="width25"><a href="#">피드</a></li><!--
 				 --><li class="width25"><a href="#">내서재</a></li><!--
 				 --><li class="width25"><a href="#">회원정보</a></li>
-				 </ul>
-			</div>
-			<div id="lnb">
-					<li></li><!--
-				 --><li class="width25">
-					 	<a href="#">1_소메뉴1</a>
-					 	<a href="#">1_소메뉴2</a>
-					 	<a href="#">1_소메뉴3</a>
-					 	<a href="#">1_소메뉴4</a>
-					 	<a href="#">1_소메뉴5</a>
-					 </li><!--
-				 --><li class="width25">
-					 	<a href="#">2_소메뉴1</a>
-					 	<a href="#">2_소메뉴2</a>
-					 	<a href="#">2_소메뉴3</a>
-					 	<a href="#">2_소메뉴4</a>
-					 	<a href="#">2_소메뉴5</a>
-					 </li><!--
-				 --><li class="width25">
-					 	<a href="#">3_소메뉴1</a>
-					 	<a href="#">3_소메뉴2</a>
-					 	<a href="#">3_소메뉴3</a>
-					 	<a href="#">3_소메뉴4</a>
-					 	<a href="#">3_소메뉴5</a>
-					 </li><!--
-				 --><li class="width25">
-					 	<a href="#">4_소메뉴1</a>
-					 	<a href="#">4_소메뉴2</a>
-					 	<a href="#">4_소메뉴3</a>
-					 	<a href="#">4_소메뉴4</a>
-					 	<a href="#">4_소메뉴5</a>
-					 </li>
 				 </ul>
 			</div>
 		</div>

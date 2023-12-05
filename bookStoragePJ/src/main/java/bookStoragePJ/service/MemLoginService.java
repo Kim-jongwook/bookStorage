@@ -22,35 +22,40 @@ public class MemLoginService {
 		String memPw = loginCommand.getMemPw();
 
 		if (memId != null && !memId.isEmpty()) {
-			AuthInfoDTO dto = memberMapper.loginSelect(memId);
+			if (memPw != null && !memPw.isEmpty()) {
+				AuthInfoDTO dto = memberMapper.loginSelect(memId);
 
-			if (dto != null) {
-				if (dto.getUserEmailCheck() == null || dto.getUserEmailCheck().equals("N")) {
-					// 아이디는 있지만, 이메일 인증이 완료되지 않았을 때
-					result.rejectValue("userEmailCheck", "loginCommand.userEmailCheck", "이메일 인증이 완료되지 않았습니다.");
-				} else {
-					// 아이디도 있고, 이메일 인증도 되었을 때
-					if (dto.getGrade().equals("emp")) {
-						if (memPw.equals(dto.getMemPw())) {
-							session.setAttribute("auth", dto);
-						} else {
-							result.rejectValue("memPw", "loginCommand.memPw", "비밀번호가 일치하지 않습니다.(관리자)");
-						}
+				if (dto != null) {
+					if (dto.getUserEmailCheck() == null || dto.getUserEmailCheck().equals("N")) {
+						// 아이디는 있지만, 이메일 인증이 완료되지 않았을 때
+						result.rejectValue("userEmailCheck", "loginCommand.userEmailCheck", "이메일 인증이 완료되지 않았습니다.");
 					} else {
-						if (passwordEncoder.matches(memPw, dto.getMemPw())) {
-							// 비밀번호가 DB와 일치할 때
-							session.setAttribute("auth", dto);
+						// 아이디도 있고, 이메일 인증도 되었을 때
+						if (dto.getGrade().equals("emp")) {
+							if (memPw.equals(dto.getMemPw())) {
+								session.setAttribute("auth", dto);
+							} else {
+								result.rejectValue("memPw", "loginCommand.memPw", "비밀번호가 일치하지 않습니다.(관리자)");
+							}
 						} else {
-							// 비밀번호가 DB와 일치하지 않을 때
-							result.rejectValue("memPw", "loginCommand.memPw", "비밀번호가 일치하지 않습니다.(회원)");
+							if (passwordEncoder.matches(memPw, dto.getMemPw())) {
+								// 비밀번호가 DB와 일치할 때
+								session.setAttribute("auth", dto);
+							} else {
+								// 비밀번호가 DB와 일치하지 않을 때
+								result.rejectValue("memPw", "loginCommand.memPw", "비밀번호가 일치하지 않습니다.(회원)");
+							}
 						}
-					}
 
+					}
+				} else {
+					// 아이디가 존재하지 않을 때
+					result.rejectValue("memId", "loginCommand.memId", "아이디가 존재하지 않습니다.");
 				}
 			} else {
-				// 아이디가 존재하지 않을 때
-				result.rejectValue("memId", "loginCommand.memId", "아이디가 존재하지 않습니다.");
+				//비밀번호를 입력하지 않았을 때( 공백으로 인한 매치 방지)
 			}
+
 		}
 	}
 }

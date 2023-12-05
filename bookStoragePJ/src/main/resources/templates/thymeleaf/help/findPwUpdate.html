@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/thymeleaf/common/layouts/default_layout">
+
+<th:block layout:fragment="contentCss">
+	<link href="/static/css/help/findPw.css" rel="stylesheet">
+</th:block>
+
+<th:block layout:fragment="contentScript">
+<script>
+	$(function(){
+		$("#frm").submit(function(){
+			if($("#memPw").val() != $("#memPwCon").val()){
+				alert("비밀번호를 일치하도록 입력해주세요.");
+				return false;
+			}else{}
+		});
+	});
+	
+</script>
+</th:block>
+
+<th:block layout:fragment="content">
+	<section id="section">
+		<div class="sectionTop">
+			<div class="wrap">
+				<div class="snbBox">
+					<h3>회원정보</h3>
+					<ul class="snb">
+						<li><a href="#">로그인</a></li>
+						<li><a href="/help/findId">아이디 찾기</a></li>
+						<li><a href="/help/findPw">비밀번호 재발급</a></li>
+						<li><a href="/register/userAgree">회원가입</a></li>
+					</ul>
+				</div>
+				<div class="sectionMid">
+					<div class="subject">
+						<h2>회원가입</h2>
+						<div class="subjectRoot">
+							<ul>
+								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
+								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
+								<li>&nbsp;>&nbsp;&nbsp;비밀번호 재발급</li>
+							</ul>
+						</div>
+						<div class="subjectButton">
+							<ul>
+								<li><a href="#"><i class="fal fa-share-alt"></i></i></i></a></li>
+								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
+							</ul>
+						</div>
+					</div><!--메뉴 경로와 상단여기까지-->
+					<p>아래의 입력칸에 변경하실 비밀번호를 입력해주세요</p>
+					<form action="findPwUpdate" method="post" name="frm" id="frm" th:object="${findPwUpdateCommand}">
+						<input type="text" name="memId" id="memIdHide" th:value="${session.findDTO.memId}" readonly="readonly"><br>
+						<input type="password" name="memPw" id="memPw" required="required" placeholder="비밀번호"><span>10~16자리 영문/숫자/특수문자[!@#$%^&*(),.]혼용</span><br>
+						<span style="color: red;" th:if="${#fields.hasErrors('memPw')}" th:errors="*{memPw}"></span><br>
+						<input type="password"	name="memPwCon" id="memPwCon" required="required" placeholder="비밀번호 확인"><br>
+						<input type="submit" value="비밀번호 변경">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</th:block>
+
+</html>

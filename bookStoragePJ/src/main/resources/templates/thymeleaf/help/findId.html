@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="/thymeleaf/common/layouts/default_layout">
+
+<th:block layout:fragment="contentCss">
+	<link href="/static/css/help/findId.css" rel="stylesheet">
+</th:block>
+
+<th:block layout:fragment="contentScript">
+
+</th:block>
+
+<th:block layout:fragment="content">
+	<section id="section">
+		<div class="sectionTop">
+			<div class="wrap">
+				<div class="snbBox">
+					<h3>회원정보</h3>
+					<ul class="snb">
+						<li><a href="#">로그인</a></li>
+						<li><a href="/help/findId">아이디 찾기</a></li>
+						<li><a href="/help/findPw">비밀번호 재발급</a></li>
+						<li><a href="/register/userAgree">회원가입</a></li>
+					</ul>
+				</div>
+				<div class="sectionMid">
+					<div class="subject">
+						<h2>회원가입</h2>
+						<div class="subjectRoot">
+							<ul>
+								<li><a href="#"><i class="fal fa-home"></i>&nbsp;</a></li>
+								<li>&nbsp;>&nbsp;&nbsp;회원정보</li>
+								<li>&nbsp;>&nbsp;&nbsp;아이디 찾기</li>
+							</ul>
+						</div>
+						<div class="subjectButton">
+							<ul>
+								<li><a href="#"><i class="fal fa-share-alt"></i></i></i></a></li>
+								<li><a href="#"><i class="fal fa-print"></i></i></a></li>
+							</ul>
+						</div>
+					</div><!--메뉴 경로와 상단여기까지-->
+					<form action="findId" name="frm" id="frm" method="post" th:object="${findIdCommand}">
+						<table border="1" width=600 align="center">
+							<tr><th>이름</th>
+							    <td><input type="text" name="memName" th:value="${findIdCommand.memName}" /><br/>
+							<span th:if="${#fields.hasErrors('memName')}" th:errors="*{memName}"></span>
+							    </td></tr>							
+							<tr><th>전화번호</th>
+							    <td><input type="text" name="memPhone" th:value="${findIdCommand.memPhone}" /><br/>
+							<span th:if="${#fields.hasErrors('memPhone')}" th:errors="*{memPhone}"></span>
+							    </td></tr>
+							<tr><th>이메일</th>
+							    <td><input type="email" name="memEmail" th:value="${findIdCommand.memEmail}" /><br/>
+							<span th:if="${#fields.hasErrors('memEmail')}" th:errors="*{memEmail}"></span>
+								</td></tr>
+							<tr><th colspan="2"><input type="submit" value="아이디 찾기"/></th></tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</th:block>
+
+</html>
