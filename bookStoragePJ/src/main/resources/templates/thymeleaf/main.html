@@ -8,7 +8,6 @@
 </th:block>
 
 <th:block layout:fragment="contentScript">
-	<script src="https://kit.fontawesome.com/19818c12f7.js" crossorigin="anonymous"></script>
 	<script src="static/js/dropdownSearch.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script>
@@ -23,10 +22,6 @@
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true,
-				},
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
 				},
 			});
 		};
@@ -50,7 +45,7 @@
 					</div>
 					<div class="searchField">
 						<input type="text" class="input" name="searchBox" placeholder="검색어를 입력하세요.">
-						<i class="fa-solid fa-magnifying-glass" style="color: #4073cc;"></i>
+						<i class="far fa-search" style="color: #4073cc;"></i>
 					</div>
 				</div>
 				<div class="sectionTopFlex">
@@ -70,8 +65,6 @@
 									<img src="/static/img/swipe_4.jpg">
 								</div>
 							</div>
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
 							<div class="swiper-pagination"></div>
 						</div>
 					</div>
@@ -80,7 +73,7 @@
 							<div class="loginFormWrap">
 								<form class="loginForm" action="/login/login" method="post" th:object="${loginCommand}">
 									<table>
-										<caption>회원 로그인</caption>
+										<caption><span style="color:#333; font-weight: bold;">회원 로그인</span></caption>
 										<tr><th colspan="3"><input type="checkbox" name="">로그인 유지<input type="checkbox" name="">아이디 저장</tr>
 										<tr>
 											<th class="positionRel"colspan="3">
@@ -95,7 +88,7 @@
 											</th>
 										</tr>
 										<tr><th colspan="3"><input type="submit" value="로그인"></th></tr>
-										<tr><th colspan="3"><div class="form4"><a href="#">아이디 찾기</a><a href="#">비밀번호 찾기</a><a href="register/userAgree">회원가입</a></div></td></tr>
+										<tr><th colspan="3"><div class="form4 wd100"><a href="#">아이디 찾기</a><a href="#">비밀번호 찾기</a><a href="register/userAgree">회원가입</a></div></th></tr>
 									</table>
 								</form>
 								<ul>
@@ -108,24 +101,20 @@
 						</div>
 					</div>
 					<div th:if="${session.auth != null && session.auth.grade == 'mem'}"> <!--로그인 정보 있을 때-->
-						<div class="loginBox">
+						<div class="loginBox mem">
 							<div class="loginFormWrap">
 									<table>
-										<caption>[[${session.auth.memName}]]님 환영합니다!</caption>
+										<caption><span style="color:#3780ca; font-weight: bold;">[[${session.auth.memName}]]</span>님 환영합니다!</caption>
+										<tr><th colspan="3"><a class="logout" href="login/logout">로그아웃</a></th></tr>
 										<tr>
-											<th class="" colspan="3">
-												<a href="login/logout">로그아웃</a>
-											</th>
-										</tr>
-										<tr>
-											<th class="" colspan="3">
-												<span>구역 나누기</span>
-											</th>
-										</tr>
-										<tr>
-											<th class="" colspan="3">
-												<button type="button">내서재</button>
-												<button type="button">마이페이지</button>
+											<th colspan="3">
+												<div class="hr"></div>
+												<div class="form4 calc50">
+													<a href="#">내 서재</a>
+												</div>
+												<div class="form4 calc50 ml5 ">
+													<a href="#">정보수정</a>
+												</div>
 											</th>
 										</tr>
 									</table>
@@ -158,7 +147,7 @@
 																			</th>
 																		</tr>
 																		<tr><th colspan="3"><input type="submit" value="로그인"></th></tr>
-																		<tr><th colspan="3"><div class="form4"><a href="#">아이디 찾기</a><a href="#">비밀번호 찾기</a><a href="register/userAgree">회원가입</a></div></td></tr>
+																		<tr><th colspan="3"><div class="form4"><a href="#">아이디 찾기</a><a href="#">비밀번호 찾기</a><a href="register/userAgree">회원가입</a></div></th></tr>
 																	</table>
 																</form>
 																<ul>

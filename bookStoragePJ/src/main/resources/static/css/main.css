@@ -99,7 +99,7 @@
 	outline: none;
 }
 
-#section .sectionTop .sectionGroup .searchBox .searchField .fa-solid{
+#section .sectionTop .sectionGroup .searchBox .searchField .fa-search{
 	position: absolute;
 	top: 13px;
 	right: 25px;
@@ -151,24 +151,24 @@
 	padding: 30px 35px 0;
 	
 }
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table{
 	margin: 0 auto;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table caption{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table caption{
 	text-align: left;
-	padding-bottom: 5px;
+	padding-bottom: 12px;
 	font-size: 20px;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th{
 	padding: 5px 0;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table .positionRel{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table .positionRel{
 	position: relative;
 }
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table .positionRel .Error{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table .positionRel .Error{
 	display: inline-block;
 	text-align: left;
 	width: 100%;
@@ -186,7 +186,7 @@
 }
 
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th input[type="text"], input[type="password"]{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th input[type="text"], input[type="password"]{
 	width: 268px;
 	height: 10px;
 	padding: 15px;
@@ -196,7 +196,7 @@
 	font-size: 16px;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th input[type="submit"]{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th input[type="submit"]{
 	width: 298px;
 	height: 40px;
 	border: none;
@@ -208,25 +208,50 @@
 	cursor: pointer;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th .form4{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .logout{
+	display: block;
 	width: 298px;
 	height: 40px;
+	border: none;
 	border-radius: 5px;
-	background-color: #9fb2d3;
+	background-color: #005eb2;
+	color: #fff;
+	font-size: 19px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	line-height: 40px;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th .form4 a{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th .form4{
+	display: inline-block;
+	height: 40px;
+	border-radius: 5px;
+	background-color: #6c6c6c;
+}
+
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th .form4 a{
 	display: inline-block;
 	text-decoration: none;
 	color: #fff;
 	line-height: 40px;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th .form4 a:first-child::before{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th .hr{
+	border-top: 1px dotted #555 ;
+	margin-bottom: 10px;
+}
+
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th .form4.calc50 a{
+	width: 100%;
+	height: 100%;
+}
+
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th .form4 a:first-child::before{
 	content: none;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .loginForm table th .form4 a::before{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox table th .form4 a::before{
 	content: '|';
 	font-size: 10px;
 	color: #d1d1d1;
@@ -235,12 +260,12 @@
 	user-select: none;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .div ul{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox ul{
 	margin-top: 20px;
 	text-align: center;
 }
 
-#section .sectionTop .sectionGroup .sectionTopFlex .loginBox .div ul li{
+#section .sectionTop .sectionGroup .sectionTopFlex .loginBox ul li{
 	display: inline-block;
 	width: 45%;
 	margin-bottom: 20px;
@@ -255,3 +280,4 @@
 	height: 1000px;
 	background-color: hotpink;
 }
+.calc50{width: calc(50% - 5px);}
